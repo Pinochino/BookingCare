@@ -1,9 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { configViewEngine } from './config/viewEngine';
-import { initWebRoutes } from './route/web';
 import multer from 'multer';
 import dotenv from 'dotenv';
+import initWebRoutes from './route/route';
+import configViewEngine from './config/viewEngine';
 dotenv.config();
 
 
