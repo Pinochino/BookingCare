@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./layouts/head.ejs') %>
+
+    <body>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">email</th>
+                        <th scope="col">createdAt</th>
+                        <th scope="col">updateAt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (data && data.length> 0) { %> <% data.forEach(user=> { %>
+                    <tr>
+                        <th scope="row"><%= user.id %></th>
+                        <td><%= user.firstName %></td>
+                        <td><%= user.lastName %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.createdAt %></td>
+                        <td><%= user.updatedAt %></td>
+                    </tr>
+                    <% }); %> <% } else { %>
+                    <p>Not found the data</p>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

@@ -4,6 +4,7 @@ import multer from 'multer';
 import dotenv from 'dotenv';
 import initWebRoutes from './route/route';
 import configViewEngine from './config/viewEngine';
+import { connectDb } from './config/ConnectDb';
 dotenv.config();
 
 
@@ -16,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 configViewEngine(app);
 initWebRoutes(app);
-
+connectDb();
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
